@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Find Quote
+{% endblock %}
+
+{% block main %}
+    <h1 class="text-center">Quote results for {{ symbol }}</h1>
+    <p>Quote: ${{ quote }}</p>
+{% endblock %}

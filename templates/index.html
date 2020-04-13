@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h1 class="text-center">Index</h1>
+    <p class="text-left">Current Balance: {{ cash }}</p>
+    <p class="text-left">Net Value: {{ net_value }}</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Stock</th>
+                <th scope="col">Number of Shares</th>
+                <th scope="col">Current Share Price</th>
+                <th scope="col">Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for purchase in purchases %}
+                <tr>
+                    <td>{{ purchase["symbol"] }}</td>
+                    <td>{{ purchase["shares"] }}</td>
+                    <td>{{ purchase["current_price"] }}</td>
+                    <td>{{ purchase["total_value"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
